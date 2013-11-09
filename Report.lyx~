@@ -151,7 +151,7 @@ By demarcating a boundary defining our system, we can set up an area of
 \end_layout
 
 \begin_layout Standard
-Carbon enters such a system continuously through the litterfall from trees
+Carbon enters such a system continuously through the litter-fall from trees
  and plants living within the boundary and carbon exits the system via respirati
 on and humification.
 \end_layout
@@ -161,8 +161,8 @@ Modelling the Carbon in a Simple Litter Model
 \end_layout
 
 \begin_layout Standard
-We assume that the rate of litterfall is constant, as are the rates of respirati
-on and humification, within the system.
+We assume that the rate of litter-fall is constant, as are the rates of
+ respiration and humification, within the system.
  Our model, then relies on the following variables and parameters:
 \end_layout
 
@@ -182,7 +182,7 @@ status open
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -191,7 +191,7 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -200,7 +200,7 @@ Type
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -211,7 +211,7 @@ Description
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -223,7 +223,7 @@ Description
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -232,18 +232,18 @@ Variable
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Time, represented coninuously
+Time, represented continuously
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -255,7 +255,7 @@ Time, represented coninuously
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -264,7 +264,7 @@ Function
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -284,7 +284,7 @@ The amount of carbon in the litter at time
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -296,7 +296,7 @@ The amount of carbon in the litter at time
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -305,11 +305,11 @@ Parameter
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-The litterfall rate, in 
+The litter-fall rate, in 
 \begin_inset Formula $g\; C/m^{2}$
 \end_inset
 
@@ -320,7 +320,7 @@ The litterfall rate, in
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -332,7 +332,7 @@ The litterfall rate, in
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -341,7 +341,7 @@ Parameter
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -356,7 +356,7 @@ The respiration proportionality constant, in
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -368,7 +368,7 @@ The respiration proportionality constant, in
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -377,7 +377,7 @@ Parameter
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -410,7 +410,7 @@ Parameters and Variables in the Simple Litter Model
 
 \begin_inset CommandInset label
 LatexCommand label
-name "parameters_and_variables_simple_litter_model"
+name "table:parameters_and_variables_simple_litter_model"
 
 \end_inset
 
@@ -423,12 +423,12 @@ name "parameters_and_variables_simple_litter_model"
 \end_layout
 
 \begin_layout Standard
-We assume that carbon enters the system at a constant rate through litterfall,
+We assume that carbon enters the system at a constant rate through litter-fall,
  and that carbon exits the system by respiration and humification, also
  at constant rates.
  We also assume that the model starts out with zero litter (and thus zero
  carbon).
- This assumption seems reasonable, since it simulates forest rejeuvination
+ This assumption seems reasonable, since it simulates forest rejuvenation
  after a ground fire.
 \end_layout
 
@@ -443,7 +443,7 @@ Our objective, then, is to model the amount of carbon contained in the litter
 \begin_inset Formula $t$
 \end_inset
 
-, given the constant rate of litterfall 
+, given the constant rate of litter-fall 
 \begin_inset Formula $z$
 \end_inset
 
@@ -456,6 +456,166 @@ Our objective, then, is to model the amount of carbon contained in the litter
 \end_inset
 
 , within the system.
+\end_layout
+
+\begin_layout Standard
+We've chosen to represent the model as a differential equation,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x'(t)=z+x(t)*(1-r-h)\label{eq:simple_diff_eq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We now also assume that 
+\begin_inset Formula $r=h$
+\end_inset
+
+, meaning that the rates of respiration and humifcation are equal.
+ Thus, we can combine them into a single rate 
+\begin_inset Formula $k=r+h$
+\end_inset
+
+.
+ Updating 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:simple_diff_eq"
+
+\end_inset
+
+, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x'(t)=z+x(t)*(1-k)\label{eq:simple_diff_eq_simplified}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Solution to the Simple Litter Model
+\end_layout
+
+\begin_layout Standard
+The general solution to the differential equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:simple_diff_eq_simplified"
+
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x(t)=\frac{z}{k-1}+c_{1}e^{(1-k)t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To find a specific solution to the differential equation, we rely on the
+ assumption that there is initially zero carbon in the system: 
+\begin_inset Formula $x(t=0)=0$
+\end_inset
+
+.
+ Thus, we can find 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+x(0) & = & \frac{z}{k-1}+c_{1}e^{(1-k)0}\\
+0 & = & \frac{z}{k-1}+c_{1}\\
+\implies c_{1} & = & \frac{z}{1-k}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+A Concrete Solution to the Simple Litter Model
+\end_layout
+
+\begin_layout Standard
+From the existing literature, we can estimate parameter values to represent
+ real-world measurements of a temperate forest.
+ We let
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+z & = & 240\; g\; C/m^{2}\\
+k=r+h & = & 0.4/year
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Plugging these parameter values into the model equations, we find
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+c_{1} & = & \frac{z}{1-k}\\
+ & = & 400
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:simple_diff_eq_simplified"
+
+\end_inset
+
+ becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x(t)=400e^{0.6t}-400\label{eq:simple_specific_solution_temperate_forest}
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -579,6 +739,7 @@ Differential Equations
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
