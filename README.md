@@ -1,2 +1,8 @@
-math372_project_2
-=================
+Project Carbon Cycle
+====================
+
+This repository contains all of the files for Project Carbon Cycle, prepared by
+
+* Rahmat Saeedi
+* Michael Browne
+* Cole Fichter
