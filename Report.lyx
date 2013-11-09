@@ -618,6 +618,55 @@ x(t)=600-600e^{-0.4t}\label{eq:simple_specific_solution_temperate_forest}
 
 \end_layout
 
+\begin_layout Standard
+Here we see a plot of the solution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/simple_model_solution_50_year_plot.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+A Plot of the Solution to the Simple Litter Model
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plot_of_solution_to_simple_litter_model"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 The Carbon Cycle Problem
 \end_layout
