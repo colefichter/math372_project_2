@@ -465,7 +465,7 @@ We've chosen to represent the model as a differential equation,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-x'(t)=z+x(t)*(1-r-h)\label{eq:simple_diff_eq}
+x'(t)=z-x(t)*(r+h)\label{eq:simple_diff_eq}
 \end{equation}
 
 \end_inset
@@ -497,7 +497,7 @@ reference "eq:simple_diff_eq"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-x'(t)=z+x(t)*(1-k)\label{eq:simple_diff_eq_simplified}
+x'(t)=z-k*x(t)\label{eq:simple_diff_eq_simplified}
 \end{equation}
 
 \end_inset
@@ -523,7 +523,7 @@ reference "eq:simple_diff_eq_simplified"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-x(t)=\frac{z}{k-1}+c_{1}e^{(1-k)t}
+x(t)=c_{1}e^{-kt}+\frac{z}{k}
 \end{equation}
 
 \end_inset
@@ -548,9 +548,8 @@ To find a specific solution to the differential equation, we rely on the
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-x(0) & = & \frac{z}{k-1}+c_{1}e^{(1-k)0}\\
-0 & = & \frac{z}{k-1}+c_{1}\\
-\implies c_{1} & = & \frac{z}{1-k}
+x(0) & = & c_{1}e^{-k0}+\frac{z}{k}\\
+\implies c_{1} & = & -\frac{z}{k}
 \end{eqnarray*}
 
 \end_inset
@@ -587,8 +586,9 @@ Plugging these parameter values into the model equations, we find
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-c_{1} & = & \frac{z}{1-k}\\
- & = & 400
+c_{1} & = & -\frac{z}{k}\\
+ & = & -\frac{240}{0.4}\\
+ & = & -600
 \end{eqnarray*}
 
 \end_inset
@@ -610,7 +610,7 @@ reference "eq:simple_diff_eq_simplified"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-x(t)=400e^{0.6t}-400\label{eq:simple_specific_solution_temperate_forest}
+x(t)=600-600e^{-0.4t}\label{eq:simple_specific_solution_temperate_forest}
 \end{equation}
 
 \end_inset
