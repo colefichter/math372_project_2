@@ -70,6 +70,22 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset FloatList table
 
 \end_inset
@@ -650,7 +666,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-A Plot of the Solution to the Simple Litter Model
+Plot of the Solution to the Simple Litter Model
 \end_layout
 
 \end_inset
@@ -886,15 +902,19 @@ In the next section, we look at a more complicated problem, The Carbon Cycle,
 \end_layout
 
 \begin_layout Section
-The Carbon Cycle Problem
+An Enhanced Model: The Carbon Cycle
 \end_layout
 
 \begin_layout Subsection
-Modelling Approach
+Context
+\end_layout
+
+\begin_layout Subsection
+Modelling the Carbon in The Carbon Cycle
 \end_layout
 
 \begin_layout Subsubsection
-Variables
+Parameters
 \end_layout
 
 \begin_layout Standard
@@ -929,7 +949,7 @@ status open
 
 \begin_layout Plain Layout
 Flow portion from atmosphere to 
-\begin_inset Formula $i$
+\begin_inset Formula $x_{i}$
 \end_inset
 
 
@@ -956,11 +976,11 @@ Flow portion from atmosphere to
 
 \begin_layout Plain Layout
 Flow portion from 
-\begin_inset Formula $i$
+\begin_inset Formula $x_{i}$
 \end_inset
 
  to 
-\begin_inset Formula $j$
+\begin_inset Formula $x_{j}$
 \end_inset
 
 
@@ -980,7 +1000,14 @@ Flow portion from
 \begin_inset Caption
 
 \begin_layout Plain Layout
-The Model Variables
+Parameters of the Carbon Cycle Model
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:parameters_carbon_cycle_model"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1126,7 +1153,14 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-The Model Variables
+Variables of the Carbon Cycle Model
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:variables_carbon_cycle_model"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1180,11 +1214,19 @@ p_{4}z\\
 \end_layout
 
 \begin_layout Subsection
-Solving the Model
+Solution to the Carbon Cycle Model
 \end_layout
 
 \begin_layout Subsection
-Sensitivity Analysis
+Analysis of the Carbon Cycle Model
+\end_layout
+
+\begin_layout Subsection
+Observations and Conclusions of the Carbon Cycle Model
+\end_layout
+
+\begin_layout Subsection
+Criticisms of the Carbon Cycle Model
 \end_layout
 
 \begin_layout Section
