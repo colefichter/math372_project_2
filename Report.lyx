@@ -459,13 +459,13 @@ Our objective, then, is to model the amount of carbon contained in the litter
 \end_layout
 
 \begin_layout Standard
-We've chosen to represent the model as a differential equation,
+We've chosen to represent the model with a differential equation
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-x'(t)=z-x(t)*(r+h)\label{eq:simple_diff_eq}
+x'(t)=z-(r+h)*x(t)\label{eq:simple_diff_eq}
 \end{equation}
 
 \end_inset
@@ -478,7 +478,7 @@ We now also assume that
 \begin_inset Formula $r=h$
 \end_inset
 
-, meaning that the rates of respiration and humifcation are equal.
+, meaning that the rates of respiration and humification are equal.
  Thus, we can combine them into a single rate 
 \begin_inset Formula $k=r+h$
 \end_inset
@@ -523,7 +523,7 @@ reference "eq:simple_diff_eq_simplified"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-x(t)=c_{1}e^{-kt}+\frac{z}{k}
+x(t)=c_{1}e^{-kt}+\frac{z}{k}\label{eq:simple_diff_eq_general_solution}
 \end{equation}
 
 \end_inset
@@ -600,7 +600,7 @@ c_{1} & = & -\frac{z}{k}\\
 And equation 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "eq:simple_diff_eq_simplified"
+reference "eq:simple_diff_eq_general_solution"
 
 \end_inset
 
@@ -818,8 +818,71 @@ reference "fig:plot_of_solution_to_simple_litter_model"
 Observations and Conclusions of the Simple Litter Model
 \end_layout
 
+\begin_layout Standard
+Our model suggests that the density of carbon sequestered in the litter
+ found on the floor of a temperate forest should reach an equilibrium of
+ about 
+\begin_inset Formula $600\; g\; C/m^{2}$
+\end_inset
+
+, even if the initial state of the forest is free of litter due to a recent
+ ground fire.
+\end_layout
+
+\begin_layout Standard
+Intuitively, this makes sense based on our familiarity with nature.
+ Biological systems generally must tend toward equilibrium since any environment
+ containing finite resources cannot support infinite growth.
+ Also, if systems tended toward unbounded decay (or decline), life would
+ have been extinguished billions of years ago.
+\end_layout
+
 \begin_layout Subsection
-Citicisms of Simple Litter Model
+Criticisms of the Simple Litter Model
+\end_layout
+
+\begin_layout Standard
+This model is obviously very simplistic.
+ We measure carbon only within the litter, and only within an arbitrarily
+ bounded region of the forest.
+ We also assume that carbon exits the litter via respiration and humification
+ at the same rate.
+ 
+\end_layout
+
+\begin_layout Standard
+Assuming that all of the rates in the model are constant is probably not
+ a good representation of a real biological system.
+ In a temperate climate, trees drop their leaves in the autumn.
+ Surely this type of seasonal fluctuation would affect the rate of litter-fall,
+ 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ Since we have assumed that 
+\begin_inset Formula $z$
+\end_inset
+
+ is constant, this model would be more suited to a discreet modelling approach
+ where each discrete time step, 
+\begin_inset Formula $t$
+\end_inset
+
+, represents one year.
+ However, since we've viewed time continuously, our rate of litter-fall
+ should really fluctuate seasonally.
+\end_layout
+
+\begin_layout Standard
+Finally, we don't have a good understanding of the constants provided in
+ the problem, nor a clear picture of how they were measured and the accuracy
+ of those measurements.
+\end_layout
+
+\begin_layout Standard
+In the next section, we look at a more complicated problem, The Carbon Cycle,
+ which addresses some of these shortcomings.
 \end_layout
 
 \begin_layout Section
