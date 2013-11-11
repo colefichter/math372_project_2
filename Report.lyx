@@ -125,6 +125,10 @@ Introduction
 Historical Context
 \end_layout
 
+\begin_layout Subsection
+Overview of Results (Executive Summary)
+\end_layout
+
 \begin_layout Section
 Carbon in a Simple Litter Model
 \end_layout
@@ -798,7 +802,7 @@ Graphical Stability Analysis of the Simple Litter Model
 
 \begin_inset CommandInset label
 LatexCommand label
-name "figure:graphical_stability_simple_model"
+name "fig:graphical_stability_simple_model"
 
 \end_inset
 
@@ -907,6 +911,113 @@ An Enhanced Model: The Carbon Cycle
 
 \begin_layout Subsection
 Context
+\end_layout
+
+\begin_layout Standard
+We now focus on a more complicated model that addresses some of the concerns
+ outlined above.
+ It is called the Carbon Cycle Model.
+ This model extends the previous Simple Litter Model to examine carbon as
+ it flows throughout an ecosystem.
+ In addition to litter, we also consider leaves, branches, stems, roots,
+ humus, and stable humus charcoal.
+\end_layout
+
+\begin_layout Standard
+Here we see a conceptual diagram of the Carbon Cycle Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/carbon_cycle_diagram.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Conceptual Diagram of the Carbon Cycle Model
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:carbon_cycle_diagram"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Although noted in the diagram, we consider the atmosphere to be external
+ to the model.
+ This is mainly due to the enormity of the atmosphere as compared with the
+ finite region being modelled.
+ Carbon that is absorbed by plants from the atmosphere is considered to
+ be entering the model, while carbon respirated to the atmosphere during
+ the decay process is considered to be leaving the model.
+\end_layout
+
+\begin_layout Standard
+Carbon enters the cycle when growing plants absorb carbon dioxide (
+\begin_inset Formula $CO_{2}$
+\end_inset
+
+) from the atmosphere.
+ The 
+\begin_inset Formula $CO_{2}$
+\end_inset
+
+ is converted into organic plant matter and sequestered within the leaves,
+ branches, stems, and roots of each plant.
+ Over time, as plants drop leaves and stems, litter accumulates on the forest
+ floor, as in the Simple Litter Model.
+\end_layout
+
+\begin_layout Standard
+The plant roots and the litter then undergo humification which produces
+ humus, as in the Simple Litter Model, and 
+\begin_inset Formula $CO_{2}$
+\end_inset
+
+.
+ As the humus decays, it produces stable humus charcoal, and more 
+\begin_inset Formula $CO_{2}$
+\end_inset
+
+.
+ As charcoal breaks down, it also releases some 
+\begin_inset Formula $CO_{2}$
+\end_inset
+
+.
+ All of the carbon dioxide produced during this cycle ends up back in the
+ global atmosphere, ready to be reabsorbed by growing plants.
 \end_layout
 
 \begin_layout Subsection
@@ -1174,8 +1285,11 @@ name "tab:variables_carbon_cycle_model"
 \end_layout
 
 \begin_layout Standard
+\noindent
 \align center
-\begin_inset Formula $\left(\begin{array}{c}
+
+\size footnotesize
+\begin_inset Formula $\left[\begin{array}{c}
 \dot{x}_{1}\\
 \dot{x}_{2}\\
 \dot{x}_{3}\\
@@ -1183,7 +1297,7 @@ name "tab:variables_carbon_cycle_model"
 \dot{x}_{5}\\
 \dot{x}_{6}\\
 \dot{x}_{7}
-\end{array}\right)=\left[\begin{array}{ccccccc}
+\end{array}\right]=\left[\begin{array}{ccccccc}
 -k_{15} & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & -k_{25} & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & -k_{35} & 0 & 0 & 0 & 0\\
@@ -1191,7 +1305,7 @@ name "tab:variables_carbon_cycle_model"
 k_{15} & k_{25} & k_{35} & 0 & -k_{50}-k_{56} & 0 & 0\\
 0 & 0 & 0 & k_{46} & k_{56} & -k_{60}-k_{67} & 0\\
 0 & 0 & 0 & 0 & 0 & k_{67} & -k_{70}
-\end{array}\right]\left(\begin{array}{c}
+\end{array}\right]\left[\begin{array}{c}
 x_{1}\\
 x_{2}\\
 x_{3}\\
@@ -1199,7 +1313,7 @@ x_{4}\\
 x_{5}\\
 x_{6}\\
 x_{7}
-\end{array}\right)+\left[\begin{array}{c}
+\end{array}\right]+\left[\begin{array}{c}
 p_{1}z\\
 p_{2}z\\
 p_{3}z\\
