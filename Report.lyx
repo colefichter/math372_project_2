@@ -292,8 +292,7 @@ The amount of carbon in the litter at time
 \begin_inset Formula $t$
 \end_inset
 
-.
- In 
+, in 
 \begin_inset Formula $g\; C/m^{2}$
 \end_inset
 
@@ -333,7 +332,7 @@ The litter-fall rate, in
 \begin_inset Formula $g\; C/m^{2}$
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -369,7 +368,7 @@ The respiration proportionality constant, in
 \begin_inset Formula $/year$
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -405,7 +404,7 @@ The humification proportionality constant, in
 \begin_inset Formula $/year$
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -1024,8 +1023,66 @@ The plant roots and the litter then undergo humification which produces
 Modelling the Carbon in The Carbon Cycle
 \end_layout
 
+\begin_layout Standard
+Our Carbon Cycle Model relies on a system of differential equations, each
+ fairly similar to equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:simple_diff_eq_simplified"
+
+\end_inset
+
+ from the Simple Litter Model.
+\end_layout
+
 \begin_layout Subsubsection
 Parameters
+\end_layout
+
+\begin_layout Standard
+We assume that carbon enters the system from the atmosphere at a constant
+ rate, 
+\begin_inset Formula $z$
+\end_inset
+
+, measured in metric Gigatonnes of carbon per year (
+\begin_inset Formula $Gt\; C/year$
+\end_inset
+
+).
+ We further partition 
+\begin_inset Formula $z$
+\end_inset
+
+ into the portion which goes into the leaves, branches, stems, and roots
+ by the proportion parameters 
+\begin_inset Formula $p_{1},p_{2},p_{3},p_{4}$
+\end_inset
+
+.
+ Note that the 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ essentially represent a probability distribution for the dispersion of
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ into the components of the model.
+ The parameters 
+\begin_inset Formula $k_{ij}$
+\end_inset
+
+ are proportions that indicate the rate of carbon transferred from 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ to 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1038,10 +1095,37 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
+<lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The rate that carbon enters the system, in 
+\begin_inset Formula $Gt\; C/year$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -1059,7 +1143,11 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-Flow portion from atmosphere to 
+The proportion of 
+\begin_inset Formula $z$
+\end_inset
+
+ absorbed into 
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -1086,7 +1174,7 @@ Flow portion from atmosphere to
 \begin_inset Text
 
 \begin_layout Plain Layout
-Flow portion from 
+The rate of carbon transfer from 
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -1114,7 +1202,7 @@ Flow portion from
 Parameters of the Carbon Cycle Model
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:parameters_carbon_cycle_model"
+name "tab:carbon_cycle_parameters"
 
 \end_inset
 
@@ -1124,9 +1212,103 @@ name "tab:parameters_carbon_cycle_model"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Variables
+\end_layout
+
+\begin_layout Standard
+We represent each of the seven model components (leaves, branches, stems,
+ roots, litter, humus, stable humus charcoal) by a variable 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+, where 
+\begin_inset Formula $i=1,2,...7$
+\end_inset
+
+.
+ Thus, 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ represents leaves, 
+\begin_inset Formula $x_{4}$
+\end_inset
+
+ represents roots, etc.
+ These variables can be seen in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:carbon_cycle_diagram"
+
+\end_inset
+
+ and in the following table.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The amount of carbon stored in each of the model components, 
+\begin_inset Formula $i=1,2,...7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Variables of the Carbon Cycle Model
 \begin_inset CommandInset label
 LatexCommand label
-name "table:basicvariables"
+name "tab:carbon_cycle_variables"
 
 \end_inset
 
@@ -1136,6 +1318,23 @@ name "table:basicvariables"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We assume that carbon flowing between any two connected components in the
+ diagram can be represented by a differential equation, as we did in the
+ Simple Litter Model.
+ Our model, then, consists of a system of seven differential equations.
+ In contrast with the simple litter model, our goal is no longer to compute
+ the amount of carbon in any given component, but rather to examine the
+ system as a whole.
+ Of particular interest are so called steady-states, where the system may
+ achieve an equilibrium.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1264,10 +1463,10 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Variables of the Carbon Cycle Model
+Differential Equations of the Carbon Cycle Model
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:variables_carbon_cycle_model"
+name "tab:carbon_cycle_diff_eqs"
 
 \end_inset
 
@@ -1285,19 +1484,49 @@ name "tab:variables_carbon_cycle_model"
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align center
+To make the notation a little less cumbersome, let 
+\begin_inset Formula $X'=\left\langle \dot{x}_{1},\dot{x}_{2},...,\dot{x}_{7}\right\rangle $
+\end_inset
 
-\size footnotesize
-\begin_inset Formula $\left[\begin{array}{c}
-\dot{x}_{1}\\
-\dot{x}_{2}\\
-\dot{x}_{3}\\
-\dot{x}_{4}\\
-\dot{x}_{5}\\
-\dot{x}_{6}\\
-\dot{x}_{7}
-\end{array}\right]=\left[\begin{array}{ccccccc}
+.
+ That is, we place the left hand side of each differential equation in Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:carbon_cycle_diff_eqs"
+
+\end_inset
+
+ into a column vector and denote it 
+\begin_inset Formula $X'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Next, from the right hand side of the differential equations in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:carbon_cycle_diff_eqs"
+
+\end_inset
+
+, we place the 
+\begin_inset Formula $k_{ij}$
+\end_inset
+
+ coefficients into a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+, as follows
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+A & = & \left[\begin{array}{ccccccc}
 -k_{15} & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & -k_{25} & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & -k_{35} & 0 & 0 & 0 & 0\\
@@ -1305,15 +1534,46 @@ name "tab:variables_carbon_cycle_model"
 k_{15} & k_{25} & k_{35} & 0 & -k_{50}-k_{56} & 0 & 0\\
 0 & 0 & 0 & k_{46} & k_{56} & -k_{60}-k_{67} & 0\\
 0 & 0 & 0 & 0 & 0 & k_{67} & -k_{70}
-\end{array}\right]\left[\begin{array}{c}
-x_{1}\\
-x_{2}\\
-x_{3}\\
-x_{4}\\
-x_{5}\\
-x_{6}\\
-x_{7}
-\end{array}\right]+\left[\begin{array}{c}
+\end{array}\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We also let 
+\begin_inset Formula $\vec{x}=\left\langle x_{1},x_{2},...,x_{7}\right\rangle $
+\end_inset
+
+ (a column vector of variables from the right hand side of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:carbon_cycle_diff_eqs"
+
+\end_inset
+
+).
+ Finally, we add the remaining constant terms from the right hand side of
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:carbon_cycle_diff_eqs"
+
+\end_inset
+
+ to a constant vector, 
+\begin_inset Formula $\vec{b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\vec{b} & = & \left[\begin{array}{c}
 p_{1}z\\
 p_{2}z\\
 p_{3}z\\
@@ -1321,7 +1581,25 @@ p_{4}z\\
 0\\
 0\\
 0
-\end{array}\right]$
+\end{array}\right]
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, we can now represent our system of differential equations with the
+ vector equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X'=A\vec{x}+\vec{b}\label{eq:carbon_cycle_diff_eqs_as_matrix_eqn}
+\end{equation}
+
 \end_inset
 
 
