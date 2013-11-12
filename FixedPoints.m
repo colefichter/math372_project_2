@@ -1,4 +1,4 @@
-function [ FP ] = FixedPoints( K , V )
+function [ FP, A, b ] = FixedPoints( K , V )
 %Calculats FixedPoints
 %Model Selection
 %K:= Column coresponding to desired ecosystem. 0<K<7.
@@ -37,10 +37,9 @@ function [ FP ] = FixedPoints( K , V )
     %Solves 0=Ax+b >> -b=Ax
     FP=A\(-b);
     format long;
-   
     display(strcat('The fixed points of the model #', int2str(K) ,' is:'));
     FP
-        
-    clear A b ztemp i h c k50 k60 temp
+    format short; %end formatting
+    clear ztemp i h c k50 k60 temp
 end
 
