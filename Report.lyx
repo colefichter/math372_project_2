@@ -691,7 +691,221 @@ name "fig:plot_of_solution_to_simple_litter_model"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Numerical Solution to the Simple Litter Model
+\end_layout
+
+\begin_layout Standard
+Oftentimes it is not possible to obtain a closed form or easily calculable
+ analytical solution to differential equations.
+ To investigate farther into this topic, we stipulated a numerical solution
+ to equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:simple_diff_eq_simplified"
+
+\end_inset
+
+.
+ Using initial condition 
+\begin_inset Formula $x(0)=0$
+\end_inset
+
+ and Eauler's method for solving ODEs, we preceeded as shown in Algorithm
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Alg:Eauler Method"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Enumerate
+Initial Conditions: 
+\begin_inset Formula $t=0$
+\end_inset
+
+ & 
+\begin_inset Formula $x(0)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\delta t=0.1$
+\end_inset
+
+Year
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $x'(t+\delta t)=240-0.4x(t)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $x(t+\delta t)=x(t)+\delta t\; x'(t)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $t=t+0.1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+While 
+\begin_inset Formula $t<50$
+\end_inset
+
+ Years, goto 3
+\end_layout
+
 \begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Euler method for solving simple litter model ODE, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:simple_diff_eq_simplified"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "Alg:Eauler Method"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Plot of the numerical solution which is overlayed on the top of the analytical
+ solution is depicted in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:plot_of_solution_to_simple_litter_mode_Numerical"
+
+\end_inset
+
+.
+ Additionally 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Numerical&Analytical Solutions to Part 1.jpg
+	scale 40
+	BoundingBox 0bp 0bp 1041bp 754bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Plot of the Numerical Solution Overlayed on Top of Analytical Solution to
+ the Simple Litter Model
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plot_of_solution_to_simple_litter_mode_Numerical"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Numerical&Analytical Comparison for Part 1.jpg
+	scale 40
+	BoundingBox 0bp 0bp 1041bp 754bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Plot of the Absolute Value of the Difference Between Numerical and Analytical
+ Solutions to Simple Litter Problem 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plot_of_solution_to_simple_litter_model_Numerical Diff"
+
+\end_inset
+
 
 \end_layout
 
