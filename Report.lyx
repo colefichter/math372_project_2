@@ -122,11 +122,61 @@ Introduction
 \end_layout
 
 \begin_layout Subsection
-Historical Context
+Context
+\end_layout
+
+\begin_layout Standard
+In this paper we attempt to model, mathematically, carbon as it moves through
+ the ecosystem.
+ In a typical forest, carbon dioxide (CO
+\begin_inset Formula $_{2}$
+\end_inset
+
+) exists everywhere in the atmosphere.
+ As trees and other plants grow, they absorb the carbon dioxide from the
+ atmosphere and convert it into the plant matter that makes up their stems,
+ leaves, branches, and roots.
+ Eventually, the plants drop their leaves and other bits, which accumulate
+ on the forest floor.
+ We call this accumulated organic material 
+\emph on
+litter
+\emph default
+.
+ Over time, this litter begins to decay, a process which releases some of
+ the stored carbon back into the atmosphere as CO
+\begin_inset Formula $_{2}$
+\end_inset
+
+.
+ The rest of the stored carbon is converted into 
+\emph on
+humus
+\emph default
+ (the black substance that gives soil its characteristic colour and texture)
+ as well as 
+\emph on
+stable humus charcoal
+\emph default
+ (pure carbon produced as humus decays).
+\end_layout
+
+\begin_layout Standard
+Our goal is to be able to compute the density of carbon stored in each phase
+ of the biosphere life-cycle at any given point in time.
+ We begin with an admittedly naive model that examines only the carbon stored
+ in the litter deposited on the forest floor.
+ We then examine a more complicated model that addresses some of the shortcoming
+s of the naive model, and allows us to compute the amount of carbon present
+ in any part of the biosphere.
 \end_layout
 
 \begin_layout Subsection
 Overview of Results (Executive Summary)
+\end_layout
+
+\begin_layout Standard
+TODO: write this!
 \end_layout
 
 \begin_layout Section
@@ -456,8 +506,8 @@ We assume that carbon enters the system at a constant rate through litter-fall,
 \end_inset
 
  is a constant.
- We also assume that initially there ia a zero litter density (and thus
- zero carbon in the area under survailence).
+ We also assume that initially there is a zero litter density (and thus
+ zero carbon in the area under surveillance).
  This assumption corresponds to a simulation of forest rejuvenation after
  a ground fire.
 \end_layout
@@ -477,11 +527,11 @@ Our objective, then, is to model the amount of carbon contained in the litter
 \begin_inset Formula $z$
 \end_inset
 
-, the constant rate 
+, and the constant rate, 
 \begin_inset Formula $r+h$
 \end_inset
 
- of respiration plus humification within the system.
+, of respiration plus humification within the system.
 \end_layout
 
 \begin_layout Standard
@@ -589,7 +639,7 @@ A Concrete Solution to the Simple Litter Model
 
 \begin_layout Standard
 From the existing literature, we estimate parameter values to represent
- real-world measurements of a temperate forest.
+ real-world empirical measurements of a temperate forest.
  We let
 \end_layout
 
@@ -707,7 +757,7 @@ Oftentimes it is not possible to obtain a closed form or easily calculable
  To investigate farther into this topic, we stipulated a numerical solution
  to equation 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:simple_diff_eq_simplified"
 
 \end_inset
@@ -717,11 +767,11 @@ reference "eq:simple_diff_eq_simplified"
 \begin_inset Formula $x(0)=0$
 \end_inset
 
- and Eauler's method for solving ODEs, we preceeded as shown in Algorithm
- 
+ and Euler's method for solving oridnary differential equations, we preceeded
+ as shown in Algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "Alg:Eauler Method"
+reference "Alg:Euler Method"
 
 \end_inset
 
@@ -730,6 +780,7 @@ reference "Alg:Eauler Method"
 
 \begin_layout Standard
 \begin_inset Float algorithm
+placement H
 wide false
 sideways false
 status open
@@ -786,9 +837,9 @@ While
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Euler method for solving simple litter model ODE, 
+Euler method for solving simple litter model ODE, eqn.
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:simple_diff_eq_simplified"
 
 \end_inset
@@ -804,7 +855,7 @@ reference "eq:simple_diff_eq_simplified"
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "Alg:Eauler Method"
+name "Alg:Euler Method"
 
 \end_inset
 
@@ -817,23 +868,23 @@ name "Alg:Eauler Method"
 \end_layout
 
 \begin_layout Standard
-Plot of the numerical solution which is overlayed on the top of the analytical
- solution is depicted in figure 
+Here we see the numerical solution overlayed on the top of the analytical
+ solution 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "fig:plot_of_solution_to_simple_litter_mode_Numerical"
 
 \end_inset
 
 .
- Additionally 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -851,8 +902,8 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Plot of the Numerical Solution Overlayed on Top of Analytical Solution to
- the Simple Litter Model
+Plot of Numerical Solution vs.
+ Analytical Solution to the Simple Litter Model
 \end_layout
 
 \end_inset
@@ -873,10 +924,16 @@ name "fig:plot_of_solution_to_simple_litter_mode_Numerical"
 \end_layout
 
 \begin_layout Standard
+And now we see a plot of the difference between the analytical solution
+ and the numeric solution.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -894,8 +951,8 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Plot of the Absolute Value of the Difference Between Numerical and Analytical
- Solutions to Simple Litter Problem 
+Plot of Absolute Value of the Difference Between Numerical and Analytical
+ Solutions to Simple Litter Model 
 \end_layout
 
 \end_inset
@@ -940,13 +997,29 @@ By definition, the fixed point of our model exists when
 \begin_inset Formula $x'(t)=0$
 \end_inset
 
-, which occurs only when 
-\begin_inset Formula $-600=-600e^{-0.4t}$
+.
+ By rearranging the equation as 
+\begin_inset Formula $x'(t)=-0.4(x(t)-600)$
+\end_inset
+
+, it is easy to see that 
+\begin_inset Formula $x'(t)=0$
+\end_inset
+
+ only when 
+\begin_inset Formula $x(t)=600$
 \end_inset
 
 .
- Since this equation does not have any real roots, we can't analytically
- find a fixed point 
+ Since equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:simple_specific_solution_temperate_forest"
+
+\end_inset
+
+ does not have any real roots, we can't analytically find a fixed point
+ 
 \begin_inset Formula $t^{*}$
 \end_inset
 
@@ -1044,7 +1117,7 @@ The graphical stability analysis confirms that
 \begin_inset Formula $x(t^{*})=600$
 \end_inset
 
- is indeed a stable point, where we should expect the system to stabilize.
+ is indeed a stable point, where we should expect the system to equalize.
  This confirms the observations of Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1105,7 +1178,7 @@ Assuming that all of the rates in the model are constant is probably not
 \begin_inset Formula $z$
 \end_inset
 
- is constant, this model would be more suited to a discreet modelling approach
+ is constant, this model would be more suited to a discrete modelling approach
  where each discrete time step, 
 \begin_inset Formula $t$
 \end_inset
@@ -1249,7 +1322,7 @@ Modelling the Carbon in The Carbon Cycle
 Our Carbon Cycle Model relies on a system of differential equations, each
  fairly similar to equation 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:simple_diff_eq_simplified"
 
 \end_inset
@@ -1564,6 +1637,11 @@ Differential Equations
 \end_layout
 
 \begin_layout Standard
+Here we see a table of the seven differential equations in the Carbon Cycle
+ Model.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -1865,6 +1943,23 @@ newpage
 
 \begin_layout Section
 Appendix A
+\end_layout
+
+\begin_layout Standard
+All of the resources used to prepare this project are available in our public
+ GitHub repository at 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/colefichter/math372_project_2"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+On the linked page you will also find a short menu describing where to find
+ files of interest.
 \end_layout
 
 \begin_layout Standard
