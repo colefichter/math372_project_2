@@ -1634,6 +1634,13 @@ We assume that carbon flowing between any two connected components in the
 
 \begin_layout Subsubsection
 Differential Equations
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Differential-Equations"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1913,12 +1920,306 @@ Solution to the Carbon Cycle Model
 Analysis of the Carbon Cycle Model
 \end_layout
 
+\begin_layout Standard
+The analysis of the Carbon Cycle Model consists of stability analysis and
+ its corresponding sensitivity analysis.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Stability of the Fixed Points
+\end_layout
+
+\begin_layout Standard
+A system is said to be stable around a fixed point if for any initial data,
+ the solution tends toward to the neighbourhood of the fixed point.
+ If given a system 
+\begin_inset Formula $\vec{x}'=f(x)$
+\end_inset
+
+ such that 
+\begin_inset Formula $x(0)=x_{0}$
+\end_inset
+
+ and a fixed point 
+\begin_inset Formula $f(c)=0$
+\end_inset
+
+ (that is, 
+\begin_inset Formula $\vec{x}'=0$
+\end_inset
+
+), the system can be expanded using Taylor's Theorem around the fixed point:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\vec{x}'=\vec{f}(\vec{x})=\vec{f}(\vec{c})+D\vec{f}(\vec{c})(\vec{x}_{0}-\vec{c})+R(\vec{y})=D\left(\vec{f}(\vec{c})\right)(\vec{x}_{0}-\vec{c})+R(\vec{y})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we let 
+\begin_inset Formula $R(\vec{y)}$
+\end_inset
+
+ be the neighbourhood and define 
+\begin_inset Formula $J=D\left(\vec{f}(\vec{c})\right)$
+\end_inset
+
+ to be the Jacobian of the system, then the stability for the fixed point
+ is found by the eigenvalues of the Jacobian.
+ If every eigenvalue of the Jacobian at the point 
+\begin_inset Formula $\vec{c}$
+\end_inset
+
+ is real and negative, then the solution is real.
+\end_layout
+
+\begin_layout Standard
+For the Carbon Cycle Model in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:carbon_cycle_diff_eqs"
+
+\end_inset
+
+, the Jacobian is given by the matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Differential-Equations"
+
+\end_inset
+
+.
+ Since this matrix is Lower Triangular, its eigenvalues are given by the
+ diagonal entries.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\{\lambda_{i}\}=\{-k_{15},-k_{25},-k_{35},-k_{46},-(k_{50}+k_{56}),-(k_{60}+k_{67}),-k_{70}\}\label{eq:carbon_cycle_eigenvalues}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since all parameters 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ are positive and constant with respect to 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+
+\begin_inset Formula $_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{c}$
+\end_inset
+
+, all eigenvalues are negative for all 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+
+\begin_inset Formula $_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{c}$
+\end_inset
+
+.
+ Thus, for the system in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:carbon_cycle_diff_eqs"
+
+\end_inset
+
+, the fixed points are stable.
+\end_layout
+
+\begin_layout Subsubsection
+Sensitivity of the Stability of the Fixed Points 
+\end_layout
+
+\begin_layout Standard
+The general sensitivity for an equation 
+\begin_inset Formula $f$
+\end_inset
+
+ to the parameter 
+\begin_inset Formula $x$
+\end_inset
+
+ is given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+s(f,x)=\left.\frac{d(f)}{dx}*\frac{x}{f}\right|_{x_{0}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the model in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:carbon_cycle_diff_eqs"
+
+\end_inset
+
+, the equations for the stability are given by equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:carbon_cycle_eigenvalues"
+
+\end_inset
+
+.In terms of the general sensitivity equation, the acting function 
+\begin_inset Formula $f$
+\end_inset
+
+ is each 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ and the acting parameter 
+\begin_inset Formula $x$
+\end_inset
+
+ is the corresponding entry.
+ Since the equation for each 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ is linear with respect to its acting 
+\begin_inset Formula $x$
+\end_inset
+
+, the sensitivity for each is 1.
+ This solution does not give much useful information about the sensitivity
+ of the model to its parameter values.
+\end_layout
+
+\begin_layout Standard
+A second method to examine the sensitivity of the model is to look at values
+ of 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ that would change the stability of the system.
+ Clearly, these values occur when the corresponding entries in equation
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:carbon_cycle_eigenvalues"
+
+\end_inset
+
+ are greater than or equal to zero.
+ Consequently, for instability to occur, one of the given parameters 
+\begin_inset Formula $k_{j}$
+\end_inset
+
+ must be less than or equal to zero.
+ 
+\end_layout
+
 \begin_layout Subsection
 Observations and Conclusions of the Carbon Cycle Model
 \end_layout
 
+\begin_layout Standard
+The Carbon Cycle Model has stable solutions that are affected strictly by
+ the parameters given by the system.
+ When Figure 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:carbon_cycle_diagram"
+
+\end_inset
+
+ is examined in perspective, the flows from each component must go in one
+ direction; otherwise the system does not match physical intuition.
+ More concretely, how could, for example, decaying leaves 
+\begin_inset Quotes eld
+\end_inset
+
+reverse
+\begin_inset Quotes erd
+\end_inset
+
+ and become living leaves again? This implies that all parameters must be
+ greater than zero.
+ With this in mind, it is clear that any system equivalent to the model
+ derived from Figure 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:carbon_cycle_diagram"
+
+\end_inset
+
+ must have stable fixed points.
+ Our confidence in the Carbon Cycle Model is boosted by the fact that our
+ stability analysis is consistent with real constraints inherent in a biological
+ system.
+\end_layout
+
 \begin_layout Subsection
 Criticisms of the Carbon Cycle Model
+\end_layout
+
+\begin_layout Standard
+Like any mathematical model, there are errors made when creating a model
+ for a system.
+ The main contributor for these errors in general is a lack of model variables.
+ Real systems have a large number of factors and to create a model that
+ has a solution one must use a relatively small number of variables.
+ More specific to this model, the equations had not taken into account that
+ the number of trees change with respect to how much atmospheric carbon
+ dioxide there is.
+ This brings up the fact that the amount of atmospheric carbon dioxide changes
+ with respect to time.
+ Furthermore, this system is considered in isolation.
+ There are different types of trees in a given ecosystem and thus the values
+ for the parameters for each part of the tree are actually functions of
+ how many of each tree there are.
+ Note however, some of these issues do not affect the stability of the system
+ since there parameters would still be positive; the issues affect the actual
+ fixed point solutions.
+ 
+\end_layout
+
+\begin_layout Standard
+This Carbon Cycle Model also suffers from the assumption of constant paramter
+ values, as we saw in the Simple Litter Model.
+ Again, it doesn't really make sense to assume that trees will drop their
+ leaves at a constant rate through a calendar year, but such assumptions
+ simplify the calculations and make the modelling process feasible.
 \end_layout
 
 \begin_layout Section
