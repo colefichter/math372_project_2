@@ -471,7 +471,7 @@ The humification proportionality constant, in
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Parameters and Variables in the Simple Litter Model
+Parameters and variables in the Simple Litter Model
 \end_layout
 
 \end_inset
@@ -716,6 +716,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/simple_model_solution_50_year_plot.png
+	lyxscale 80
 	scale 50
 
 \end_inset
@@ -727,7 +728,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Plot of the Solution to the Simple Litter Model
+Plot of the solution to the Simple Litter Model
 \end_layout
 
 \end_inset
@@ -776,6 +777,28 @@ reference "Alg:Euler Method"
 \end_inset
 
 .
+ For the first 50 years, a plot of the numerical and analytical solutions
+ were overlayed on the top of their difference 
+\begin_inset Formula $|\Delta x(t)|$
+\end_inset
+
+ in figure 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:plot_of_solution_to_simple_litter_mode_Numerical"
+
+\end_inset
+
+.
+ The two solutions agree within 
+\begin_inset Formula $2.43\; g\; C/m^{2}\;\;89\%$
+\end_inset
+
+ of the times and they reach maximum difference of 
+\begin_inset Formula $4.49\; g\; C/m^{2}$
+\end_inset
+
+after 2.5 years.
 \end_layout
 
 \begin_layout Standard
@@ -868,18 +891,6 @@ name "Alg:Euler Method"
 \end_layout
 
 \begin_layout Standard
-Here we see the numerical solution overlayed on the top of the analytical
- solution 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "fig:plot_of_solution_to_simple_litter_mode_Numerical"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -889,9 +900,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename images/Numerical&Analytical Solutions to Part 1.jpg
+	filename images/NumericalSolution.jpg
+	lyxscale 40
 	scale 40
 	BoundingBox 0bp 0bp 1041bp 754bp
+	rotateOrigin center
 
 \end_inset
 
@@ -902,8 +915,18 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Plot of Numerical Solution vs.
- Analytical Solution to the Simple Litter Model
+Plot of numerical and analytical solutions to the Simple Litter Model (left
+ axis) as well as a plot of the absolute value of the difference between
+ analytical and numerical solution 
+\begin_inset Formula $|\Delta x(t)|$
+\end_inset
+
+ (right axis).
+ The two solutions reach maximum disagreement of 4.49 
+\begin_inset Formula $g\; C\;/\; m^{2}$
+\end_inset
+
+at 2.5 years.
 \end_layout
 
 \end_inset
@@ -912,55 +935,6 @@ Plot of Numerical Solution vs.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:plot_of_solution_to_simple_litter_mode_Numerical"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-And now we see a plot of the difference between the analytical solution
- and the numeric solution.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename images/Numerical&Analytical Comparison for Part 1.jpg
-	scale 40
-	BoundingBox 0bp 0bp 1041bp 754bp
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Plot of Absolute Value of the Difference Between Numerical and Analytical
- Solutions to Simple Litter Model 
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:plot_of_solution_to_simple_litter_model_Numerical Diff"
 
 \end_inset
 
@@ -1208,17 +1182,20 @@ Context
 \end_layout
 
 \begin_layout Standard
-We now focus on a more complicated model that addresses some of the concerns
- outlined above.
- It is called the Carbon Cycle Model.
+We now focus on a more complicated model of the Carbon Cycle which addresses
+ some of the concerns outlined above.
  This model extends the previous Simple Litter Model to examine carbon as
  it flows throughout an ecosystem.
- In addition to litter, we also consider leaves, branches, stems, roots,
- humus, and stable humus charcoal.
-\end_layout
+ In addition to litter, we also consider the flow of Carbon between leaves,
+ branches, stems, roots, humus, and stable humus charcoal.
+ The flow diagram of this Carbon Cycle Model is depicted in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:carbon_cycle_diagram"
 
-\begin_layout Standard
-Here we see a conceptual diagram of the Carbon Cycle Model
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1232,7 +1209,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/carbon_cycle_diagram.png
-	scale 60
+	lyxscale 50
+	scale 40
 
 \end_inset
 
@@ -1243,7 +1221,18 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Conceptual Diagram of the Carbon Cycle Model
+Conceptual Diagram of the Carbon Cycle Model.
+ Carbon flow into our system from Carbon reserrgvoir, Atmosphere.
+ The arrows represent the Carbon flow directions and their values represent
+ flow rates while 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ represent the amount of carbon in compartment 
+\begin_inset Formula $i$
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1258,18 +1247,13 @@ name "fig:carbon_cycle_diagram"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Although noted in the diagram, we consider the atmosphere to be external
- to the model.
+In this system, we consider the atmosphere to be external to the model.
  This is mainly due to the enormity of the atmosphere as compared with the
  finite region being modelled.
  Carbon that is absorbed by plants from the atmosphere is considered to
@@ -1278,12 +1262,12 @@ Although noted in the diagram, we consider the atmosphere to be external
 \end_layout
 
 \begin_layout Standard
-Carbon enters the cycle when growing plants absorb carbon dioxide (
+Carbon enters the cycle when growing plants absorb carbon dioxide, 
 \begin_inset Formula $CO_{2}$
 \end_inset
 
-) from the atmosphere.
- The 
+, from the atmosphere.
+ This 
 \begin_inset Formula $CO_{2}$
 \end_inset
 
@@ -1340,8 +1324,8 @@ We assume that carbon enters the system from the atmosphere at a constant
 \begin_inset Formula $z$
 \end_inset
 
-, measured in metric Gigatonnes of carbon per year (
-\begin_inset Formula $Gt\; C/year$
+, measured in metric grams of carbon per year per squared meter (
+\begin_inset Formula $g\; C/year/m^{2}$
 \end_inset
 
 ).
@@ -1351,11 +1335,11 @@ We assume that carbon enters the system from the atmosphere at a constant
 
  into the portion which goes into the leaves, branches, stems, and roots
  by the proportion parameters 
-\begin_inset Formula $p_{1},p_{2},p_{3},p_{4}$
+\begin_inset Formula $p_{1},\; p_{2},\; p_{3},\; p_{4}$
 \end_inset
 
 .
- Note that the 
+ Note that 
 \begin_inset Formula $p_{i}$
 \end_inset
 
@@ -1412,7 +1396,7 @@ status open
 
 \begin_layout Plain Layout
 The rate that carbon enters the system, in 
-\begin_inset Formula $Gt\; C/year$
+\begin_inset Formula $g\; C/year/m^{2}$
 \end_inset
 
 
@@ -1519,7 +1503,7 @@ Variables
 \end_layout
 
 \begin_layout Standard
-We represent each of the seven model components (leaves, branches, stems,
+We represent each of the seven model components [leaves, branches, stems,
  roots, litter, humus, stable humus charcoal) by a variable 
 \begin_inset Formula $x_{i}$
 \end_inset
@@ -1558,16 +1542,16 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
+<lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $x_{i}$
+\begin_inset Formula $x_{1}$
 \end_inset
 
 
@@ -1575,15 +1559,149 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-The amount of carbon stored in each of the model components, 
-\begin_inset Formula $i=1,2,...7$
+The amount of carbon stored in leaves
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{2}$
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The amount of carbon stored in branches
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The amount of carbon stored in stems
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The amount of carbon stored in roots
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The amount of carbon stored in litter
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The amount of carbon stored in humus
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The amount of carbon stored in charcoal
 \end_layout
 
 \end_inset
@@ -1628,24 +1746,28 @@ We assume that carbon flowing between any two connected components in the
  In contrast with the simple litter model, our goal is no longer to compute
  the amount of carbon in any given component, but rather to examine the
  system as a whole.
- Of particular interest are so called steady-states, where the system may
- achieve an equilibrium.
+ Of particular interest are the steady-states, where the system achieves
+ an equilibrium.
 \end_layout
 
 \begin_layout Subsubsection
 Differential Equations
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Differential-Equations"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-Here we see a table of the seven differential equations in the Carbon Cycle
- Model.
+A set of seven differential equations, one for each component of the model,
+ was obtained by allowing the rate of change of carbon for a given component
+ of the system to be the difference between the rate of inflow and outflow
+ of carbon in that component of the system.
+ This process is similar to that of the Simple Litter Model.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:carbon_cycle_diff_eqs"
+
+\end_inset
+
+ of the differential equations is shown below.
 \end_layout
 
 \begin_layout Standard
@@ -1666,7 +1788,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\dot{x}_{1}=p_{1}z-k_{15}x_{1}$
+\begin_inset Formula $\dot{x}_{1}=[p_{1}z]-[k_{15}x_{1}]$
 \end_inset
 
 
@@ -1680,7 +1802,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\dot{x}_{2}=p_{2}z-k_{25}x_{2}$
+\begin_inset Formula $\dot{x}_{2}=[p_{2}z]-[k_{25}x_{2}]$
 \end_inset
 
 
@@ -1694,7 +1816,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\dot{x}_{3}=p_{3}z-k_{35}x_{3}$
+\begin_inset Formula $\dot{x}_{3}=[p_{3}z]-[k_{35}x_{3}]$
 \end_inset
 
 
@@ -1708,7 +1830,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\dot{x}_{4}=p_{4}z-k_{46}x_{4}$
+\begin_inset Formula $\dot{x}_{4}=[p_{4}z]-[k_{46}x_{4}]$
 \end_inset
 
 
@@ -1722,7 +1844,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\dot{x}_{5}=k_{15}x_{1}+k_{25}x_{2}+k_{35}x_{3}-k_{50}x_{5}-k_{56}x_{5}$
+\begin_inset Formula $\dot{x}_{5}=[k_{15}x_{1}+k_{25}x_{2}+k_{35}x_{3}]-[k_{50}x_{5}+k_{56}x_{5}]$
 \end_inset
 
 
@@ -1736,7 +1858,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\dot{x}_{6}=k_{46}x_{4}+k_{56}x_{5}-k_{60}x_{6}-k_{67}x_{6}$
+\begin_inset Formula $\dot{x}_{6}=[k_{46}x_{4}+k_{56}x_{5}]-[k_{60}x_{6}+k_{67}x_{6}]$
 \end_inset
 
 
@@ -1750,7 +1872,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\dot{x}_{7}=k_{67}x_{6}-k_{70}x_{7}$
+\begin_inset Formula $\dot{x}_{7}=[k_{67}x_{6}]-[k_{70}x_{7}]$
 \end_inset
 
 
@@ -1770,7 +1892,17 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Differential Equations of the Carbon Cycle Model
+Differential Equations of the Carbon Cycle Model.
+ The rate of change of 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+was set to be the difference between the rate of inflow and outflow of the
+ carbon into component 
+\begin_inset Formula $i$
+\end_inset
+
+ of the system.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:carbon_cycle_diff_eqs"
@@ -1791,8 +1923,8 @@ name "tab:carbon_cycle_diff_eqs"
 \end_layout
 
 \begin_layout Standard
-To make the notation a little less cumbersome, let 
-\begin_inset Formula $X'=\left\langle \dot{x}_{1},\dot{x}_{2},...,\dot{x}_{7}\right\rangle $
+To simplify the notation, let 
+\begin_inset Formula $X'=\left\langle \dot{x}_{1},\dot{x}_{2},...,\dot{x}_{7}\right\rangle ^{t}$
 \end_inset
 
 .
@@ -1809,10 +1941,7 @@ reference "tab:carbon_cycle_diff_eqs"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Next, from the right hand side of the differential equations in Table 
+ Next, from the right hand side of the differential equations in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:carbon_cycle_diff_eqs"
@@ -1838,8 +1967,8 @@ A & = & \left[\begin{array}{ccccccc}
 0 & -k_{25} & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & -k_{35} & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & -k_{46} & 0 & 0 & 0\\
-k_{15} & k_{25} & k_{35} & 0 & -k_{50}-k_{56} & 0 & 0\\
-0 & 0 & 0 & k_{46} & k_{56} & -k_{60}-k_{67} & 0\\
+k_{15} & k_{25} & k_{35} & 0 & -(k_{50}+k_{56}) & 0 & 0\\
+0 & 0 & 0 & k_{46} & k_{56} & -(k_{60}+k_{67}) & 0\\
 0 & 0 & 0 & 0 & 0 & k_{67} & -k_{70}
 \end{array}\right]
 \end{eqnarray*}
@@ -1851,7 +1980,7 @@ k_{15} & k_{25} & k_{35} & 0 & -k_{50}-k_{56} & 0 & 0\\
 
 \begin_layout Standard
 We also let 
-\begin_inset Formula $\vec{x}=\left\langle x_{1},x_{2},...,x_{7}\right\rangle $
+\begin_inset Formula $\vec{x}=\left\langle \; x_{1},\; x_{2},\;...\;,\; x_{7}\;\right\rangle ^{t}$
 \end_inset
 
  (a column vector of variables from the right hand side of Table 
@@ -1880,15 +2009,7 @@ reference "tab:carbon_cycle_diff_eqs"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-\vec{b} & = & \left[\begin{array}{c}
-p_{1}z\\
-p_{2}z\\
-p_{3}z\\
-p_{4}z\\
-0\\
-0\\
-0
-\end{array}\right]
+\overrightarrow{b} & = & \left\langle \; p_{1}z,\; p_{2}z,\; p_{3}z,\; p_{4}z,\;0\;,\;0\;,\;0\;\right\rangle ^{t}
 \end{eqnarray*}
 
 \end_inset
@@ -1914,6 +2035,952 @@ X'=A\vec{x}+\vec{b}\label{eq:carbon_cycle_diff_eqs_as_matrix_eqn}
 
 \begin_layout Subsection
 Solution to the Carbon Cycle Model
+\end_layout
+
+\begin_layout Standard
+From literature, we were able to calculate the rate of carbon entery into
+ our system 
+\begin_inset Formula $z$
+\end_inset
+
+, partition coefficient 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+, and flow rate coeffients 
+\begin_inset Formula $k_{ij}$
+\end_inset
+
+ and therefore, the matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ and vector 
+\begin_inset Formula $\overrightarrow{b}$
+\end_inset
+
+ were know quantities in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
+
+\end_inset
+
+.
+ The data available were for seven ecosystems of which we chose to present
+ our findings for tropical forests, grasslands, and agricultural lands.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="16" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Variables
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tropical Forests
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grassland
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Agricultural Land
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Z$
+\end_inset
+
+ in 
+\begin_inset Formula $(Gt\; C/yr)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $27.8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10.7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $7.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Area 
+\begin_inset Formula $a$
+\end_inset
+
+ 
+\begin_inset Formula $(10^{12}\; m^{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $36.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $18.8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.30$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.60$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.80$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.20$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.30$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.20$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.40$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.20$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{15}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{25}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{35}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.033$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.02$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.02$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{46}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{56}+k_{50}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.50$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.00$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{67}+k_{60}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.025$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.04$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{70}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.002$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.002$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.002$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Humification 
+\begin_inset Formula $h=k_{56}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.40$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.60$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.20$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Carbonization 
+\begin_inset Formula $c=k_{67}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.05$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.05$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.05$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Data as was presented by literature for three ecosystems: Tropical Forests,
+ Grassland, and Agricultural Land.
+ The anual amount of carbon entering into the system, 
+\begin_inset Formula $Z$
+\end_inset
+
+ in gigatons of carbon per year, in an area of 
+\begin_inset Formula $a$
+\end_inset
+
+ was used to calculate grams of carbon 
+\begin_inset Formula $z$
+\end_inset
+
+ entering into the sysstem per year per squared meters.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Advanced_Model_Given_Data"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Steady States of the Ecosystems
+\end_layout
+
+\begin_layout Standard
+To find the fixed point of the system, we set 
+\begin_inset Formula $X'=0$
+\end_inset
+
+, as the steady states describe non-evolving carbon distribusion within
+ our system.
+ This process simplified the equation
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
+
+\end_inset
+
+ to 
+\begin_inset Formula $\begin{array}{ccc}
+A\overrightarrow{x} & = & -\overrightarrow{b}\end{array}$
+\end_inset
+
+which has a unique non-trivial solution 
+\begin_inset Formula $\overrightarrow{x}=A^{-1}\overrightarrow{b}$
+\end_inset
+
+ for every invertible matrix A, and a least square fit solution otherwise.
+\end_layout
+
+\begin_layout Subsubsection
+Time to Attaine 95% of Stable Values
+\end_layout
+
+\begin_layout Subsubsection
+Analytical Solutions
+\end_layout
+
+\begin_layout Subsubsection
+Solution Within Tropical Forest
+\end_layout
+
+\begin_layout Subsubsection
+Solution Within Grassland
+\end_layout
+
+\begin_layout Subsubsection
+Solution Within Agricultural Land
 \end_layout
 
 \begin_layout Subsection
