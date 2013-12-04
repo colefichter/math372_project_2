@@ -126,7 +126,7 @@ Context
 \end_layout
 
 \begin_layout Standard
-In this paper we attempt to model, mathematically, carbon as it moves through
+In this paper we attempt to mathematically model carbon as it moves through
  the ecosystem.
  In a typical forest, carbon dioxide (CO
 \begin_inset Formula $_{2}$
@@ -158,7 +158,7 @@ humus
 \emph on
 stable humus charcoal
 \emph default
- (pure carbon produced as humus decays).
+ (pure carbon produced when humus decays).
 \end_layout
 
 \begin_layout Standard
@@ -176,7 +176,33 @@ Overview of Results (Executive Summary)
 \end_layout
 
 \begin_layout Standard
-TODO: write this!
+We first examine a naive model, the Simple Litter Model, in an attempt to
+ predict the density of carbon sequestered in the detritus accumulating
+ on a forest floor.
+ We find that such a system can be represented with a differential equation.
+ In our analysis we find that such a system has a steady-state, or equilibrium,
+ which is stable and achievable regardless of the initial conditions applied
+ to the model.
+ Acknowledging the simplicity and limitations of the Simple Litter Model,
+ we use it as a building block for a more complicated and realistic model
+ of carbon within an ecosystem.
+\end_layout
+
+\begin_layout Standard
+The more complicated Carbon Cycle Model represents carbon sequestered not
+ only in the organic material found on the forest floor, but throughout
+ the forest ecosystem.
+ We represent such a model using a system of differential equations of greater
+ complexity than the equation used in the Simple Litter model.
+ During our analysis, we find that the Carbon Cycle model also achieves
+ steady-states, or equilibria, regardless of the initial conditions applied.
+\end_layout
+
+\begin_layout Standard
+We use a mix of analytical solutions and numerical approximation to gain
+ insight into the both models.
+ We also rely on well known concepts such as eigenvalues, Jacobian matrices,
+ and linear stability analysis to prove characteristics of the models.
 \end_layout
 
 \begin_layout Section
@@ -206,7 +232,7 @@ litter
 \emph on
 humus
 \emph default
-, which gives compost and soil their characteristic colour and texture.
+, which gives compost and soil their characteristic texture and dark colour.
  This conversion from litter to humus is known as 
 \emph on
 humification
@@ -471,7 +497,7 @@ The humification proportionality constant, in
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Parameters and variables in the Simple Litter Model
+Parameters and variables in the Simple Litter Model.
 \end_layout
 
 \end_inset
@@ -506,10 +532,9 @@ We assume that carbon enters the system at a constant rate through litter-fall,
 \end_inset
 
  is a constant.
- We also assume that initially there is a zero litter density (and thus
- zero carbon in the area under surveillance).
- This assumption corresponds to a simulation of forest rejuvenation after
- a ground fire.
+ We also assume that initially there is zero litter (and thus zero carbon
+ in the area under surveillance).
+ This assumption simulates forest rejuvenation after a ground fire.
 \end_layout
 
 \begin_layout Standard
@@ -551,7 +576,7 @@ Since
 \begin_inset Formula $r+h$
 \end_inset
 
- is a constant, we can combine the rate into a single rate 
+ is a constant, we can combine the rates into a single parameter 
 \begin_inset Formula $k=r+h$
 \end_inset
 
@@ -582,7 +607,7 @@ reference "eq:simple_diff_eq_simplified"
 
 \end_inset
 
- can be easily found using integration factor as shown below
+ can be easily found using an integration factor:
 \end_layout
 
 \begin_layout Standard
@@ -613,7 +638,8 @@ x(t) & = & c_{1}e^{-kt}+\frac{z}{k}\label{eq:simple_diff_eq_general_solution}
 
 \begin_layout Standard
 To find a specific solution to the differential equation, we rely on the
- assumption that initially there is zero carbon in the system: 
+ assumption that initially there is zero carbon in the system, which we
+ denote 
 \begin_inset Formula $x(0)=0$
 \end_inset
 
@@ -725,7 +751,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Plot of the solution to the Simple Litter Model
+Plot of the solution to the Simple Litter Model.
 \end_layout
 
 \end_inset
@@ -750,10 +776,10 @@ Numerical Solution to the Simple Litter Model
 \end_layout
 
 \begin_layout Standard
-Oftentimes it is not possible to obtain a closed form or easily calculable
- analytical solution to differential equations.
- To investigate farther into this topic, we stipulated a numerical solution
- to equation 
+It is not always possible to obtain a closed form or easily calculable analytica
+l solution to differential equations.
+ To investigate such a scenario, we computed a numerical solution to equation
+ 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:simple_diff_eq_simplified"
@@ -761,7 +787,7 @@ reference "eq:simple_diff_eq_simplified"
 \end_inset
 
 .
- Using initial condition 
+ Using the initial condition 
 \begin_inset Formula $x(0)=0$
 \end_inset
 
@@ -774,28 +800,7 @@ reference "Alg:Euler Method"
 \end_inset
 
 .
- For the first 50 years, a plot of the numerical and analytical solutions
- were overlay-ed on the top of their difference 
-\begin_inset Formula $|\Delta x(t)|$
-\end_inset
-
- in figure 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "fig:plot_of_solution_to_simple_litter_mode_Numerical"
-
-\end_inset
-
-.
- The two solutions agree within 
-\begin_inset Formula $2.43\; g\; C/m^{2}\;\;89\%$
-\end_inset
-
- of the times and they reach maximum difference of 
-\begin_inset Formula $4.49\; g\; C/m^{2}$
-\end_inset
-
-after 2.5 years.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -857,7 +862,7 @@ While
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Euler method for solving simple litter model ODE, eqn.
+Euler method for solving the Simple Litter Model ODE, eqn.
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:simple_diff_eq_simplified"
@@ -888,6 +893,31 @@ name "Alg:Euler Method"
 \end_layout
 
 \begin_layout Standard
+For the first 50 years, a plot of the numerical and analytical solutions
+ are overlayed on the top of their difference 
+\begin_inset Formula $|\Delta x(t)|$
+\end_inset
+
+ in Figure 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:plot_of_solution_to_simple_litter_mode_Numerical"
+
+\end_inset
+
+.
+ The two solutions agree within 
+\begin_inset Formula $2.43\; g\; C/m^{2}\;\;89\%$
+\end_inset
+
+ of the time and they reach maximum difference of 
+\begin_inset Formula $4.49\; g\; C/m^{2}$
+\end_inset
+
+after 2.5 years.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -899,7 +929,7 @@ status open
 \begin_inset Graphics
 	filename images/NumericalSolution.jpg
 	lyxscale 40
-	scale 35
+	scale 40
 	BoundingBox 0bp 0bp 1041bp 754bp
 	rotateOrigin center
 
@@ -1006,7 +1036,8 @@ reference "eq:simple_specific_solution_temperate_forest"
 \end_layout
 
 \begin_layout Standard
-Working with the assumption that there exists a fixed point 
+Taking the limit and working with the assumption that there exists a fixed
+ point 
 \begin_inset Formula $t^{*}$
 \end_inset
 
@@ -1053,7 +1084,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Graphical Stability Analysis of the Simple Litter Model
+Graphical stability analysis of the Simple Litter Model.
 \end_layout
 
 \end_inset
@@ -1171,9 +1202,9 @@ Context
 
 \begin_layout Standard
 We now focus on a more complicated model of the Carbon Cycle which addresses
- some of the concerns outlined above.
- This model extends the previous Simple Litter Model to examine carbon as
- it flows throughout an ecosystem.
+ some of the concerns outlined in the previous section.
+ This model extends the Simple Litter Model to examine carbon as it flows
+ throughout an ecosystem.
  In addition to litter, we also consider the flow of Carbon between leaves,
  branches, stems, roots, humus, and stable humus charcoal.
  The flow diagram of this Carbon Cycle Model is depicted in Figure 
@@ -1218,7 +1249,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Conceptual Diagram of the Carbon Cycle Model.
+Conceptual (flow) diagram of the Carbon Cycle Model.
  
 \end_layout
 
@@ -1311,7 +1342,7 @@ We assume that carbon enters the system from the atmosphere at a constant
 \begin_inset Formula $z$
 \end_inset
 
-, measured in metric grams of carbon per year per squared meter (
+, measured in grams of carbon per year per square meter (
 \begin_inset Formula $g\; C/year/m^{2}$
 \end_inset
 
@@ -1320,8 +1351,8 @@ We assume that carbon enters the system from the atmosphere at a constant
 \begin_inset Formula $z$
 \end_inset
 
- into the portion which goes into the leaves, branches, stems, and roots
- by the proportion parameters 
+ into the portions that go into the leaves, branches, stems, and roots by
+ the proportion parameters 
 \begin_inset Formula $p_{1},\; p_{2},\; p_{3},\; p_{4}$
 \end_inset
 
@@ -1356,7 +1387,7 @@ We assume that carbon enters the system from the atmosphere at a constant
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1465,7 +1496,7 @@ The rate of carbon transfer from
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Parameters of the Carbon Cycle Model
+Parameters of the Carbon Cycle Model.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:carbon_cycle_parameters"
@@ -1490,7 +1521,7 @@ Variables
 \end_layout
 
 \begin_layout Standard
-We represent each of the seven model components [leaves, branches, stems,
+We represent each of the seven model components (leaves, branches, stems,
  roots, litter, humus, stable humus charcoal) by a variable 
 \begin_inset Formula $x_{i}$
 \end_inset
@@ -1524,7 +1555,7 @@ reference "fig:carbon_cycle_diagram"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1705,7 +1736,7 @@ The amount of carbon stored in charcoal
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Variables of the Carbon Cycle Model
+Variables of the Carbon Cycle Model.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:carbon_cycle_variables"
@@ -1727,14 +1758,14 @@ name "tab:carbon_cycle_variables"
 
 \begin_layout Standard
 We assume that carbon flowing between any two connected components in the
- diagram can be represented by a differential equation, as we did in the
- Simple Litter Model.
+ diagram can be represented by a differential equation, an approach we used
+ in the Simple Litter Model.
  Our model, then, consists of a system of seven differential equations.
- In contrast with the simple litter model, our goal is no longer to compute
+ In contrast with the Simple Litter Model, our goal is no longer to compute
  the amount of carbon in any given component, but rather to examine the
  system as a whole.
  Of particular interest are the steady-states, where the system achieves
- an equilibrium.
+ equilibrium.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1776,7 +1807,7 @@ reference "tab:carbon_cycle_diff_eqs"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1893,7 +1924,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Differential Equations of the Carbon Cycle Model.
+Differential equations of the Carbon Cycle Model.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -2030,12 +2061,12 @@ Solution to the Carbon Cycle Model
 \end_layout
 
 \begin_layout Standard
-From literature, we were able to calculate the rate of carbon entry into
- our system 
+From existing literature, we were able to estimate the rate of carbon entry
+ into our system 
 \begin_inset Formula $z$
 \end_inset
 
-, partition coefficient 
+, the partition coefficients 
 \begin_inset Formula $p_{i}$
 \end_inset
 
@@ -2043,7 +2074,7 @@ From literature, we were able to calculate the rate of carbon entry into
 \begin_inset Formula $k_{ij}$
 \end_inset
 
- and therefore, the matrix 
+.Therefore, the matrix 
 \begin_inset Formula $A$
 \end_inset
 
@@ -2053,7 +2084,7 @@ From literature, we were able to calculate the rate of carbon entry into
 
  were know quantities in equation 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
 
 \end_inset
@@ -2062,10 +2093,10 @@ reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
  The data available were for seven ecosystems of which we chose to present
  our findings for tropical forests, grasslands, and agricultural lands.
  The annual amount of carbon entering into the system, 
-\begin_inset Formula $Z$
+\begin_inset Formula $z$
 \end_inset
 
- in gigatons of carbon per year, in an area of 
+ in gigatonnes of carbon per year, in an area 
 \begin_inset Formula $a$
 \end_inset
 
@@ -2073,7 +2104,7 @@ reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
 \begin_inset Formula $z$
 \end_inset
 
- entering into the system per year per squared meters.
+ entering into the system per year per square meter.
 \end_layout
 
 \begin_layout Standard
@@ -2093,16 +2124,16 @@ status open
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Variables
+Variable
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2111,7 +2142,7 @@ Tropical Forests
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2120,7 +2151,7 @@ Grassland
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2845,7 +2876,7 @@ Humification
 \begin_inset Text
 
 \begin_layout Plain Layout
-Canonization 
+Carbonization 
 \begin_inset Formula $c=k_{67}$
 \end_inset
 
@@ -2902,8 +2933,8 @@ Canonization
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Data as was presented by literature for three ecosystems: Tropical Forests,
- Grassland, and Agricultural Land.
+Data for three ecosystems (Tropical Forests, Grassland, and Agricultural
+ Land) from existing literature.
 \end_layout
 
 \end_inset
@@ -2934,9 +2965,9 @@ To find the fixed point of the system, we set
 
 , as the steady states describe non-evolving carbon distribution within
  our system.
- This process simplified the equation
+ This process simplified the equation 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
 
 \end_inset
@@ -2949,7 +2980,11 @@ which has a unique non-trivial solution
 \begin_inset Formula $\overrightarrow{x}=A^{-1}\overrightarrow{b}$
 \end_inset
 
- for every invertible matrix A, and a least square fit solution otherwise.
+ for every invertible matrix 
+\begin_inset Formula $A$
+\end_inset
+
+, and a least square fit solution otherwise.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2986,7 +3021,7 @@ reference "fig:carbon_cycle_diagram"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3035,15 +3070,15 @@ The number of years needed for each component of our ecosystem to achieve
 \begin_inset Formula $x(0)=\overrightarrow{0}$
 \end_inset
 
- evolves in accordance with the system of DE 
+ to evolve in accordance with the system of differential equations 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
 
 \end_inset
 
 .
- The system evolution was approximated using Euler method, an algorithm
+ The system evolution was approximated using the Euler method, an algorithm
  similar to that of Algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3068,12 +3103,12 @@ reference "Fig:95%_time"
 \end_inset
 
 .
- As seen in the figure, it take the longest for charcoal to reach its 
+ As seen in the figure, it take the longest for charcoal to reach 
 \begin_inset Formula $95\%$
 \end_inset
 
- of its equilibrium carbon density and it can be inferred from it that it
- takes about 
+ of its equilibrium carbon density.
+ We can infer that it takes about 
 \begin_inset Formula $100$
 \end_inset
 
@@ -3088,9 +3123,10 @@ reference "Fig:95%_time"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3112,7 +3148,7 @@ Time required for carbon density to reach
 \begin_inset Formula $95\%$
 \end_inset
 
- of their equilibrium values.
+ of equilibrium values.
  
 \end_layout
 
@@ -3138,23 +3174,23 @@ Analytical Solutions
 \end_layout
 
 \begin_layout Standard
-We were able to find general analytical solution to systems of DE
+We were able to find general analytical solution to systems of differential
+ equations 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
 
 \end_inset
 
- for all of the ecosystems using Maple's symbolic algorithm software package.
+ for all of the ecosystems using Maple.
  Moreover, since matrix 
 \begin_inset Formula $A$
 \end_inset
 
- is a triangular matrix and that our system of equations are first order
- differential equations, therefore, we can recursively solve our system,
- one variable at a time, independent of the other variables, using integration
- factor.
- For example, the first four DE in in Table 
+ is a triangular matrix and our system of equations are first order differential
+ equations, we can iteratively solve our system, one variable at a time,
+ independent of the other variables.
+ For example, the first four differential equations in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:carbon_cycle_diff_eqs"
@@ -3192,9 +3228,9 @@ reference "tab:carbon_cycle_diff_eqs"
 \color inherit
 \lang canadian
  and thus they are decoupled first order linear differential equations that
- can be solved using integration factor, as shown previously.
- The solution to these four equations are similar to that of the simple
- model:
+ can be solved using an integration factor, as shown previously.
+ The solution to these four equations are similar to that of the Simple
+ Litter Model:
 \end_layout
 
 \begin_layout Standard
@@ -3225,8 +3261,8 @@ where
 \end_inset
 
  are constants to be found using initial conditions.
- Knowing the solution to the first four DE equations, we can substitute
- for 
+ Knowing the solution to the first four differential equations, we can substitut
+e for 
 \begin_inset Formula $x_{1}$
 \end_inset
 
@@ -3235,7 +3271,7 @@ where
 \begin_inset Formula $x_{4}$
 \end_inset
 
-and rewrite the fifth DE equation as
+and rewrite the fifth differential equation as
 \end_layout
 
 \begin_layout Standard
@@ -3254,15 +3290,15 @@ and rewrite the fifth DE equation as
 \begin_layout Standard
 Since the equation 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:x5"
 
 \end_inset
 
- is first order linear equation, the solution to the equation can be obtained
- using integration factor.
- Similarly, recursively, analytical solutions to the remaining DE could
- be obtained.
+ is a first order linear equation, the solution to the equation can be obtained
+ using an integration factor.
+ Similarly, analytical solutions to the remaining differential equations
+ can be obtained.
  Lastly, to determine the constants 
 \begin_inset Formula $c_{i}$
 \end_inset
@@ -3271,7 +3307,7 @@ reference "eq:x5"
 \begin_inset Formula $x(0)=\overrightarrow{0}$
 \end_inset
 
- which corresponds to forest rejunification.
+ which corresponds to forest rejuvenation after a ground fire.
  Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3285,9 +3321,10 @@ reference "Table:Analytical_Tropical"
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3333,7 +3370,7 @@ x_{7} & \thickapprox & 10011.1-(0.51442t+1.54578)e^{-t}+(11.35t+257.85)e^{-0.1t}
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Analytical Solution of Tropical Forest Ecosystem.
+Analytical solution for a Tropical Forest ecosystem.
 \end_layout
 
 \end_inset
@@ -3358,9 +3395,9 @@ Numerical Solution
 \end_layout
 
 \begin_layout Standard
-To analytically solve the DE 
+To analytically solve the differential equation 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
 
 \end_inset
@@ -3369,14 +3406,14 @@ reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
 \begin_inset Formula $x(0)=\overrightarrow{0}$
 \end_inset
 
- and used Eauler algorithm 
+ and used Euler's method (Algorithm 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Alg:Euler Method"
 
 \end_inset
 
- using time steps of 
+) using time steps of 
 \begin_inset Formula $\delta t=0.001$
 \end_inset
 
@@ -3385,7 +3422,8 @@ reference "Alg:Euler Method"
 \end_inset
 
  years for tropical forest, grassland, and agricultural land.
- Plots of the evolution of the DE is shown in Figures 
+ Plots of the evolution of the differential equations are shown in Figures
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Fig:Tropical_Forest_Numerical_Solution"
@@ -3408,12 +3446,12 @@ reference "Fig:Agricultural Land Numerical Solution"
 
 .
  These plots agree with the previously mentioned fixed points, the analytical
- solution, and the time needed to attaine 95% of the equilibrium carbon
- density.
+ solution, and the time needed to attain 95% of the equilibrium carbon density.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -3423,7 +3461,7 @@ status open
 \begin_inset Graphics
 	filename images/Tropical Forest.jpg
 	lyxscale 90
-	scale 90
+	scale 62
 
 \end_inset
 
@@ -3434,7 +3472,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Tropical Forest's Solution
+Solution for a Tropical Forest.
 \end_layout
 
 \end_inset
@@ -3456,6 +3494,7 @@ name "Fig:Tropical_Forest_Numerical_Solution"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -3465,7 +3504,7 @@ status open
 \begin_inset Graphics
 	filename images/Grassland Report.jpg
 	lyxscale 75
-	scale 75
+	scale 65
 
 \end_inset
 
@@ -3476,7 +3515,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Grassland's Solution
+Solution for Grassland.
 \end_layout
 
 \end_inset
@@ -3498,6 +3537,7 @@ name "Fig:Grassland Numerical Solution"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -3507,7 +3547,7 @@ status open
 \begin_inset Graphics
 	filename images/Agricultural Land.jpg
 	lyxscale 60
-	scale 60
+	scale 65
 
 \end_inset
 
@@ -3518,7 +3558,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Agricultural Land's Solution
+Solution for Agricultural Land.
 \end_layout
 
 \end_inset
@@ -3539,21 +3579,21 @@ name "Fig:Agricultural Land Numerical Solution"
 \end_layout
 
 \begin_layout Standard
-As seen in the figures, independent of the ecosytem selected, it takes the
- longest for charcoal to attaine a carbon densities comparable to charcoal
- equilibrium carbon density.This agrees with observations, the small magnitude
- of its eiganvelue, and the position of charcoal within the compartmental
- diagram.
+As seen in the figures, independent of the ecosystem selected, it takes
+ the longest for charcoal to attain a carbon density comparable to its equilibri
+um value.
+ This agrees with observations, the small magnitude of its eigenvalue, and
+ the position of charcoal within the compartmental diagram.
 \end_layout
 
 \begin_layout Standard
-Morover, since 
+Moreover, since 
 \begin_inset Formula $p_{2}=p_{3}=0$
 \end_inset
 
- for grassland and agricultural land, therefore, no net carbon is flowing
- into stems or branches which explaines the absence of carbon buildup in
- those two components of the named ecosystems.
+ for grassland and agricultural land, no net carbon is flowing into stems
+ or branches, which explains the absence of carbon accumulation in those
+ two components of the given ecosystems.
 \end_layout
 
 \begin_layout Standard
@@ -3571,10 +3611,10 @@ reference "Fig:Agricultural Land Numerical Solution"
 
 \end_inset
 
- are analogus to growth of plants within the ecosystems.
- For example, it can be infered from the plots of tropical forests that
- leaf system develope within 4 years and perior to development of branch
- or root system of the trees which takes about 50 years to develop.
+ are analogous to the growth of plants within the ecosystems.
+ For example, it can be inferred from the plots of tropical forests that
+ leaf systems develop within 4 years (prior to development of branch or
+ root systems of the trees) which each take about 50 years to develop.
 \end_layout
 
 \begin_layout Subsection
@@ -3592,7 +3632,7 @@ Stability of the Fixed Points
 \end_layout
 
 \begin_layout Standard
-A system is said to be stable around a fixed point if for any initial data,
+A system is said to be stable around a fixed point if, for any initial data,
  the solution tends toward to the neighbourhood of the fixed point.
  If given a system 
 \begin_inset Formula $\vec{x}'=f(x)$
@@ -3825,7 +3865,8 @@ reference "fig:carbon_cycle_diagram"
 \end_inset
 
  is examined in perspective, the flows from each component must go in one
- direction; otherwise the system does not match physical intuition.
+ direction; otherwise the system does not match our intuition of natural
+ systems.
  More concretely, how could, for example, decaying leaves 
 \begin_inset Quotes eld
 \end_inset
@@ -3888,10 +3929,10 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-In this paper we analyzed the carbon cycle and found numerical and anlytical
+In this paper we analyzed the carbon cycle and found numerical and analytical
  solution to three ecosystems.
  Moreover, we analyzed nontrivial fixed points of our system and the relation
- between eigan values and time needed for our system to reach 95% of it's
+ between eigenvalues and time needed for our system to reach 95% of it's
  equilibrium state.
  
 \end_layout
@@ -3899,7 +3940,7 @@ In this paper we analyzed the carbon cycle and found numerical and anlytical
 \begin_layout Standard
 It worth mentioning that the methods used in this paper could be applied
  to other system as well, such as brine tanks in cascades, home heating
- and heat transfer problems, mass-spring systems, and electrical circuts.
+ and heat transfer problems, mass-spring systems, and electrical circuits.
  
 \end_layout
 
