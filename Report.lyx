@@ -713,7 +713,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/simple_model_solution_50_year_plot.png
-	lyxscale 80
+	lyxscale 50
 	scale 50
 
 \end_inset
@@ -803,7 +803,7 @@ after 2.5 years.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Enumerate
 Initial Conditions: 
@@ -899,7 +899,7 @@ status open
 \begin_inset Graphics
 	filename images/NumericalSolution.jpg
 	lyxscale 40
-	scale 40
+	scale 35
 	BoundingBox 0bp 0bp 1041bp 754bp
 	rotateOrigin center
 
@@ -1356,7 +1356,7 @@ We assume that carbon enters the system from the atmosphere at a constant
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1524,7 +1524,7 @@ reference "fig:carbon_cycle_diagram"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1776,7 +1776,7 @@ reference "tab:carbon_cycle_diff_eqs"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2942,8 +2942,7 @@ reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
 \end_inset
 
  to 
-\begin_inset Formula $\begin{array}{ccc}
-A\overrightarrow{x} & = & -\overrightarrow{b}\end{array}$
+\begin_inset Formula $A\overrightarrow{x}=-\overrightarrow{b}$
 \end_inset
 
 which has a unique non-trivial solution 
@@ -2987,7 +2986,7 @@ reference "fig:carbon_cycle_diagram"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3091,7 +3090,7 @@ reference "Fig:95%_time"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3260,7 +3259,7 @@ reference "eq:x5"
 
 \end_inset
 
-is first order linear equation, the solution to the equation can be obtained
+ is first order linear equation, the solution to the equation can be obtained
  using integration factor.
  Similarly, recursively, analytical solutions to the remaining DE could
  be obtained.
@@ -3288,7 +3287,7 @@ reference "Table:Analytical_Tropical"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3359,6 +3358,61 @@ Numerical Solution
 \end_layout
 
 \begin_layout Standard
+To analytically solve the DE 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:carbon_cycle_diff_eqs_as_matrix_eqn"
+
+\end_inset
+
+, we used the initial condition 
+\begin_inset Formula $x(0)=\overrightarrow{0}$
+\end_inset
+
+ and used Eauler algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Alg:Euler Method"
+
+\end_inset
+
+ using time steps of 
+\begin_inset Formula $\delta t=0.001$
+\end_inset
+
+ year and we allowed the system evolve to 
+\begin_inset Formula $t=6000$
+\end_inset
+
+ years for tropical forest, grassland, and agricultural land.
+ Plots of the evolution of the DE is shown in Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:Tropical_Forest_Numerical_Solution"
+
+\end_inset
+
+,
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:Grassland Numerical Solution"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:Agricultural Land Numerical Solution"
+
+\end_inset
+
+.
+ These plots agree with the previously mentioned fixed points, the analytical
+ solution, and the time needed to attaine 95% of the equilibrium carbon
+ density.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -3368,6 +3422,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/Tropical Forest.jpg
+	lyxscale 90
+	scale 90
 
 \end_inset
 
@@ -3386,7 +3442,7 @@ Tropical Forest's Solution
 
 \begin_inset CommandInset label
 LatexCommand label
-name "Fig:95%_time-1"
+name "Fig:Tropical_Forest_Numerical_Solution"
 
 \end_inset
 
@@ -3408,6 +3464,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/Grassland Report.jpg
+	lyxscale 75
+	scale 75
 
 \end_inset
 
@@ -3426,7 +3484,7 @@ Grassland's Solution
 
 \begin_inset CommandInset label
 LatexCommand label
-name "Fig:95%_time-1-1"
+name "Fig:Grassland Numerical Solution"
 
 \end_inset
 
@@ -3448,6 +3506,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/Agricultural Land.jpg
+	lyxscale 60
+	scale 60
 
 \end_inset
 
@@ -3466,7 +3526,7 @@ Agricultural Land's Solution
 
 \begin_inset CommandInset label
 LatexCommand label
-name "Fig:95%_time-1-2"
+name "Fig:Agricultural Land Numerical Solution"
 
 \end_inset
 
@@ -3476,6 +3536,45 @@ name "Fig:95%_time-1-2"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+As seen in the figures, independent of the ecosytem selected, it takes the
+ longest for charcoal to attaine a carbon densities comparable to charcoal
+ equilibrium carbon density.This agrees with observations, the small magnitude
+ of its eiganvelue, and the position of charcoal within the compartmental
+ diagram.
+\end_layout
+
+\begin_layout Standard
+Morover, since 
+\begin_inset Formula $p_{2}=p_{3}=0$
+\end_inset
+
+ for grassland and agricultural land, therefore, no net carbon is flowing
+ into stems or branches which explaines the absence of carbon buildup in
+ those two components of the named ecosystems.
+\end_layout
+
+\begin_layout Standard
+Finally, plots 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:Tropical_Forest_Numerical_Solution"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:Agricultural Land Numerical Solution"
+
+\end_inset
+
+ are analogus to growth of plants within the ecosystems.
+ For example, it can be infered from the plots of tropical forests that
+ leaf system develope within 4 years and perior to development of branch
+ or root system of the trees which takes about 50 years to develop.
 \end_layout
 
 \begin_layout Subsection
@@ -3786,6 +3885,22 @@ This Carbon Cycle Model also suffers from the assumption of constant parameter
 
 \begin_layout Section
 Conclusion
+\end_layout
+
+\begin_layout Standard
+In this paper we analyzed the carbon cycle and found numerical and anlytical
+ solution to three ecosystems.
+ Moreover, we analyzed nontrivial fixed points of our system and the relation
+ between eigan values and time needed for our system to reach 95% of it's
+ equilibrium state.
+ 
+\end_layout
+
+\begin_layout Standard
+It worth mentioning that the methods used in this paper could be applied
+ to other system as well, such as brine tanks in cascades, home heating
+ and heat transfer problems, mass-spring systems, and electrical circuts.
+ 
 \end_layout
 
 \begin_layout Standard
